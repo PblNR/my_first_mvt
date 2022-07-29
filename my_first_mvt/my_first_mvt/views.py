@@ -19,7 +19,13 @@ def nacimiento(request, edad):
     return HttpResponse(f'Naciste en: {anio}')
 
 def plantilla(request):
-    return render(request, 'plantilla.html', context = {})
+    today = datetime.today().date
+    context = {
+        'Nombre':'Pablo',
+        'Apellido': 'R.',
+        'Today': today
+    }
+    return render(request, 'plantilla.html', context = context)
 
 
 

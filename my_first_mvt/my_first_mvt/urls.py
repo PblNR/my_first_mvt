@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 
 from my_first_mvt.views import saludo, dia_de_hoy, saludo_nombre, nacimiento, plantilla
-
+from familiares.views import create_relative
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludo/', saludo, name = 'view_de_saludo'),
     path('hoy/', dia_de_hoy, name = 'hoy'),
     path('saludo_nombre/<str:nombre>/', saludo_nombre, name = 'hola_nombre'),
     path('nacimiento/<int:edad>/', nacimiento, name = 'nacimiento'),
-    path('plantilla/', plantilla, name = 'mi_plantilla')
+    path('plantilla/', plantilla, name = 'mi_plantilla'),
+    path('create_relative/', create_relative, name = 'create_relative')
 ]
